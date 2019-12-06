@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="StackAndQueue.cpp">
+    <ClCompile Include="All.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
