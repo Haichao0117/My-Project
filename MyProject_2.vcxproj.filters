@@ -21,5 +21,29 @@
     <ClCompile Include="All.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="279PerfectSquares.cpp">
+      <Filter>源文件\Leetcode_Problem</Filter>
+    </ClCompile>
+    <ClCompile Include="66DailyTemperatures.cpp">
+      <Filter>源文件\Leetcode_Problem</Filter>
+    </ClCompile>
+    <ClCompile Include="150EvaluateReversePolishNatation.cpp">
+      <Filter>源文件\Leetcode_Problem</Filter>
+    </ClCompile>
+    <ClCompile Include="622MyCirularQueue.cpp">
+      <Filter>源文件\Leetcode_Problem</Filter>
+    </ClCompile>
+    <ClCompile Include="200NumofLand.cpp">
+      <Filter>源文件\Leetcode_Problem</Filter>
+    </ClCompile>
+    <ClCompile Include="TowerofHanoi.cpp">
+      <Filter>源文件\Leetcode_Problem</Filter>
+    </ClCompile>
+    <ClCompile Include="155MinStack.cpp">
+      <Filter>源文件\Leetcode_Problem</Filter>
+    </ClCompile>
+    <ClCompile Include="20VaildParentheses.cpp">
+      <Filter>源文件\Leetcode_Problem</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -80,7 +80,7 @@ public:
 		int n;
 		for (int i = 0; i < tokens.size(); i++)
 		{
-			/*switch (tokens[i])						//C++中，switch case 不能处理字符串.sad.
+			/*switch (tokens[i])						//C++中，switch case 不能处理字符串.sad:(
 			{
 				case
 			}*/

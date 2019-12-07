@@ -138,7 +138,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="150EvaluateReversePolishNatation.cpp" />
+    <ClCompile Include="155MinStack.cpp" />
+    <ClCompile Include="200NumofLand.cpp" />
+    <ClCompile Include="20VaildParentheses.cpp" />
+    <ClCompile Include="622MyCirularQueue.cpp" />
+    <ClCompile Include="66DailyTemperatures.cpp" />
     <ClCompile Include="All.cpp" />
+    <ClCompile Include="279PerfectSquares.cpp" />
+    <ClCompile Include="TowerofHanoi.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
