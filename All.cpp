@@ -440,11 +440,86 @@ public:
 };
 
 
+//494.目标和
+class TargetSum {
+public:
+	int findTargetSumWays(vector<int>& nums, int S) {
+		int res = 0;
+		int sum = 0;
+		stack<int> s;
+		DFSsolution(nums, S, 0, sum, res);
+		return res;
+		}
+	void DFSsolution(vector<int>& nums, int S ,int i, int sum ,int& res)
+	{
+		if (i == nums.size()) {
+			if (sum == S) {
+				++res;
+			}
+			return;
+		}
+		DFSsolution(nums, S, i + 1, sum + nums[i], res);
+		DFSsolution(nums, S, i + 1, sum - nums[i], res);
+
+	}
+};
+
+
+
+//94.InorderTraversal
+//94.二叉树的中序遍历
+struct TreeNode {
+	int val;
+	TreeNode *left;
+	TreeNode *right;
+	TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ };
+ 
+class InorderTraversal {
+public:
+	vector<int> inorderTraversal(TreeNode* root) {
+		vector<int> result;
+		inOrder(root,result);
+		return result;
+	}
+	void inOrder(TreeNode* t ,vector<int>& R) {
+		if (t != NULL) {
+			inOrder(t->left, R);
+			R.push_back(t->val);
+			inOrder(t->right, R);
+		}
+	}
+	void preOrder(TreeNode* t, vector<int>& R) {
+		if (t != NULL) {
+			R.push_back(t->val);
+			inOrder(t->left, R);
+			inOrder(t->right, R);
+		}
+	}
+	void postOrder(TreeNode* t, vector<int>& R) {
+		if (t != NULL) {
+			inOrder(t->left, R);
+			inOrder(t->right, R);
+			R.push_back(t->val);
+		}
+	}
+};
+
+
 
 
 int main()
 {
 	std::cout << "Hello World!\n";
+
+	TargetSum target;
+	vector<int> test = { 1, 1, 1, 1, 1 };
+	int result = target.findTargetSumWays(test,3);
+	std:cout << result << endl;
+
+
+
+
 
 
 	/*PerfectSquares nums;
@@ -499,12 +574,12 @@ int main()
    //vector<int> result = dailytemp->dailyTemperatures(temperatures);
    //
 
-	EvaluateReversePolishNotation reverse;
+	/*EvaluateReversePolishNotation reverse;
 	vector<string> test = { "2","1","+","3","*" };
 	int result = reverse.evalRPN(test);
-	cout << result << endl;
+	cout << result << endl;*/
 
-	Node node;
+
 
 
 }
