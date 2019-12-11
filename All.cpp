@@ -508,19 +508,223 @@ public:
 
 
 
+//232.用栈实现队列
+//看了别人的解法，自己写的没用的东西太多了，循环可以直接用while(!empty()),懒得改了，参考方法二
+class  MyQueue {
+public:
+	/** Initialize your data structure here. */
+	MyQueue() {
+		
+	}
+
+	/** Push element x to the back of queue. */
+	void push(int x) {
+		int size1 = S1.size();
+		for (int i = 0; i < size1; i++) {
+			S2.push(S1.top());
+			S1.pop();
+		}
+		S1.push(x);
+		int size2 = S2.size();
+		for (int i = 0; i < size2; i++) {
+			S1.push(S2.top());
+			S2.pop();
+		}
+	}
+
+	/** Removes the element from in front of queue and returns that element. */
+	int pop() {
+		int res = S1.top();
+		S1.pop();
+		return res;
+	}
+
+	/** Get the front element. */
+	int peek() {
+		return S1.top();
+	}
+
+	/** Returns whether the queue is empty. */
+	bool empty() {
+		if (S1.empty()) return true;
+		//if (!S1.empty()) return false;						//必须要返回值，最这样写虽然在本地编译可以通过，但是leetcode上会报control reaches end of non-void function [-Werror=return-type]错误
+		else return false;
+	}
+private:
+	stack<int> S1;
+	stack<int> S2;
+
+};
+
+class  MyQueue2 {
+public:
+	/** Initialize your data structure here. */
+	MyQueue2() {
+
+	}
+
+	/** Push element x to the back of queue. */
+	void push(int x) {
+		if (S1.empty()) front = x;
+			S1.push(x);
+	}
+
+	/** Removes the element from in front of queue and returns that element. */
+	int pop() {
+		if (S2.empty()) {
+			while (!S1.empty()) {
+				S2.push(S1.top());
+				S1.pop();
+			}
+		}
+		int res = S2.top();
+		S2.pop();
+		return res;
+	}
+
+	/** Get the front element. */
+	int peek() {
+		if (!S2.empty()) return S2.top();
+		else return front;
+	}
+
+	/** Returns whether the queue is empty. */
+	bool empty() {
+		if (S1.empty() && S2.empty()) return true;
+		else return false;
+	}
+private:
+	stack<int> S1;
+	stack<int> S2;
+	int front;
+};
+
+/**
+ * Your MyQueue object will be instantiated and called as such:
+ * MyQueue* obj = new MyQueue();
+ * obj->push(x);
+ * int param_2 = obj->pop();
+ * int param_3 = obj->peek();
+ * bool param_4 = obj->empty();
+ */
+
+
+//225.用队列实现栈
+class MyStack {
+public:
+	/** Initialize your data structure here. */
+	MyStack() {
+
+	}
+
+	/** Push element x onto stack. */
+	void push(int x) {
+		while (!Q1.empty()) {
+			Q2.push(Q1.front());
+			Q1.pop();
+		}
+		Q1.push(x);
+		while (!Q2.empty()) {
+			Q1.push(Q2.front());
+			Q2.pop();
+		}
+	}
+
+	/** Removes the element on top of the stack and returns that element. */
+	int pop() {
+		int res = Q1.front();
+		Q1.pop();
+		return res;
+	}
+
+	/** Get the top element. */
+	int top() {
+		return Q1.front();
+	}
+
+	/** Returns whether the stack is empty. */
+	bool empty() {
+		if (Q1.empty()) return true;
+		else return false;
+	}
+private:
+	queue<int> Q1;
+	queue<int> Q2;
+	int peek;
+};
+
+class MyStack2 {
+public:
+	/** Initialize your data structure here. */
+	MyStack2() {
+
+	}
+
+	/** Push element x onto stack. */
+	void push(int x) {
+		Q1.push(x);
+	}
+
+	/** Removes the element on top of the stack and returns that element. */
+	int pop() {
+		int size = Q1.size();
+		for (int i = 0; i < size -1; i++) {
+			Q1.push(Q1.front());
+			Q1.pop();
+		}
+		int res = Q1.front();
+		Q1.pop();
+		return res;
+	}
+
+	/** Get the top element. */
+	int top() {
+		return Q1.back();
+	}
+
+	/** Returns whether the stack is empty. */
+	bool empty() {
+		if (Q1.empty()) return true;
+		else return false;
+	}
+private:
+	queue<int> Q1;
+	//queue<int> Q2;
+	//int peek;
+};
+
+/**
+ * Your MyStack object will be instantiated and called as such:
+ * MyStack* obj = new MyStack();
+ * obj->push(x);
+ * int param_2 = obj->pop();
+ * int param_3 = obj->top();
+ * bool param_4 = obj->empty();
+ */
+
+
+
 int main()
 {
 	std::cout << "Hello World!\n";
 
-	TargetSum target;
+
+ //Your MyQueue object will be instantiated and called as such:
+	MyQueue* obj = new MyQueue();
+	obj->push(1);
+	obj->push(2);
+	obj->push(3);
+	int param_2 = obj->pop();
+	int param_3 = obj->pop();
+	int param_4 = obj->pop();
+	cout << param_2 << '\n' << param_3 << '\n' << param_4 << endl;
+	
+	
+	
+	/*TargetSum target;
 	vector<int> test = { 1, 1, 1, 1, 1 };
 	int result = target.findTargetSumWays(test,3);
-	std:cout << result << endl;
-
-
-
-
-
+	std:cout << result << endl;*/
 
 	/*PerfectSquares nums;
 	int result =nums.numSquares(12);

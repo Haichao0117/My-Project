@@ -51,5 +51,11 @@
     <ClCompile Include="94inorderTraversal.cpp">
       <Filter>源文件\Leetcode_Problem</Filter>
     </ClCompile>
+    <ClCompile Include="232QueueUsingStack.cpp">
+      <Filter>源文件\Leetcode_Problem</Filter>
+    </ClCompile>
+    <ClCompile Include="225StackUsingQueue.cpp">
+      <Filter>源文件\Leetcode_Problem</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

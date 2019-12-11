@@ -142,6 +142,8 @@
     <ClCompile Include="155MinStack.cpp" />
     <ClCompile Include="200NumofLand.cpp" />
     <ClCompile Include="20VaildParentheses.cpp" />
+    <ClCompile Include="225StackUsingQueue.cpp" />
+    <ClCompile Include="232QueueUsingStack.cpp" />
     <ClCompile Include="494TargetSum.cpp" />
     <ClCompile Include="622MyCirularQueue.cpp" />
     <ClCompile Include="66DailyTemperatures.cpp" />
